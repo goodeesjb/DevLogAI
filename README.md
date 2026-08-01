@@ -73,7 +73,7 @@
 
 ## 7. 시스템 아키텍처
 
-React → Spring Boot → Git Commit 조회 → Gemini API → Markdown 생성 →
+React → Spring Boot → Git Commit 조회 → ChatGPT API → Markdown 생성 →
 React 출력
 
 ## 8. 기술 스택
@@ -91,7 +91,7 @@ React 출력
 
 ### AI
 
--   Gemini API
+-   ChatGPT API
 
 ### Library
 
@@ -108,7 +108,7 @@ backend/ - controller - service - ai - git - dto
 
 -   [ ] React 프로젝트 생성
 -   [ ] Spring Boot 프로젝트 생성
--   [ ] Gemini API 연동
+-   [ ] ChatGPT API 연동
 -   [ ] Git Commit 조회 기능
 -   [ ] 메모 입력 기능
 -   [ ] AI Prompt 작성
@@ -129,7 +129,7 @@ backend/ - controller - service - ai - git - dto
 
 -   ChatGPT : 기획 및 프롬프트 개선
 -   Claude Code : 구현 및 리팩터링
--   Gemini API : 개발 기록 생성
+-   ChatGPT API : 개발 기록 생성
 
 ## 13. 향후 확장
 
