@@ -1,6 +1,6 @@
 package com.devlogai.backend.ai.service;
 
-import com.devlogai.backend.ai.client.GeminiClient;
+import com.devlogai.backend.ai.client.OpenAiClient;
 import com.devlogai.backend.ai.dto.AiGenerateRequest;
 import com.devlogai.backend.ai.dto.AiGenerateResponse;
 import com.devlogai.backend.ai.dto.AiRefineRequest;
@@ -11,17 +11,17 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AiService {
 
-    private final GeminiClient geminiClient;
+    private final OpenAiClient openAiClient;
 
     public AiGenerateResponse generate(AiGenerateRequest request) {
         String prompt = buildPrompt(request);
-        String content = geminiClient.generate(prompt);
+        String content = openAiClient.generate(prompt);
         return new AiGenerateResponse(content);
     }
 
     public AiGenerateResponse refine(AiRefineRequest request) {
         String prompt = buildRefinePrompt(request.previousContent(), request.refineRequest());
-        String content = geminiClient.generate(prompt);
+        String content = openAiClient.generate(prompt);
         return new AiGenerateResponse(content);
     }
 
