@@ -31,7 +31,7 @@ public class GitService {
                     LOG_FORMAT,
                     DATE_FORMAT
             );
-            builder.redirectErrorStream(false);
+            builder.redirectErrorStream(true);
 
             Process process = builder.start();
 

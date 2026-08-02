@@ -4,6 +4,7 @@ import com.devlogai.backend.ai.client.OpenAiClient;
 import com.devlogai.backend.ai.dto.AiGenerateRequest;
 import com.devlogai.backend.ai.dto.AiGenerateResponse;
 import com.devlogai.backend.ai.dto.AiRefineRequest;
+import com.devlogai.backend.git.dto.CommitDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

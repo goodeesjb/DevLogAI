@@ -3,7 +3,6 @@ package com.devlogai.backend.ai.client;
 import com.devlogai.backend.ai.client.dto.OpenAiRequest;
 import com.devlogai.backend.ai.client.dto.OpenAiResponse;
 import com.devlogai.backend.common.exception.ExternalApiException;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -12,16 +11,16 @@ import org.springframework.web.client.RestClient;
 
 @Slf4j
 @Component
-@RequiredArgsConstructor
 public class OpenAiClient {
 
     private final RestClient openAiRestClient;
+    private final String model;
 
-    @Value("${openai.api.key}")
-    private String apiKey;
-
-    @Value("${openai.model}")
-    private String model;
+    public OpenAiClient(RestClient openAiRestClient,
+                        @Value("${openai.model}") String model) {
+        this.openAiRestClient = openAiRestClient;
+        this.model = model;
+    }
 
     public String generate(String prompt) {
         log.info("OpenAI API 요청 시작");
@@ -30,7 +29,6 @@ public class OpenAiClient {
 
             OpenAiResponse response = openAiRestClient.post()
                     .uri("/v1/chat/completions")
-                    .header("Authorization", "Bearer " + apiKey)
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(request)
                     .retrieve()
