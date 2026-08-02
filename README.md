@@ -95,7 +95,6 @@ React 출력
 
 ### Library
 
--   JGit
 -   CommonMark
 
 ## 9. 프로젝트 구조
@@ -138,10 +137,3 @@ backend/ - controller - service - ai - git - dto
 -   README 자동 생성
 -   주간 개발 리포트
 -   GitHub API 연동
-
-## 14. 과제 평가 포인트
-
--   반복적인 개발 기록 작성 자동화
--   AI와 협업하는 구조
--   AI 결과 수정 및 재생성 지원
--   실제 동작 가능한 MVP 구현
